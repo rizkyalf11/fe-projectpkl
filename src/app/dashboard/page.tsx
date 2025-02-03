@@ -1,10 +1,8 @@
 "use client"
 import { Button } from '@/components/ui/button'
-import { signOut, useSession } from 'next-auth/react'
-import Image from 'next/image'
+import { signOut } from 'next-auth/react'
 
 export default function Dashboard() {
-	const { data: session, status } = useSession()
 
 	return (
 		<div>

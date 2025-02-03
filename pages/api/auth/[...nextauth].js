@@ -7,7 +7,7 @@ const authOptions = {
 		CredentialsProvider({
 			type: 'credentials',
 			credentials: {},
-			authorize(credentials, req) {
+			authorize(credentials) {
 				return {
 					...credentials,
 				}
@@ -16,7 +16,7 @@ const authOptions = {
 	],
 
 	callbacks: {
-    async jwt({ token, user, account, trigger, session }) {
+    async jwt({ token, user, trigger, session }) {
       if (trigger === "update") {
         return { ...token, ...session.user };
       }
@@ -26,7 +26,7 @@ const authOptions = {
         ...user,
       };
     },
-    async session({ session, user, token }) {
+    async session({ session, token }) {
       console.log('hehehe', session)
       console.log('hohoho', token)
       session.user.id = token.id;

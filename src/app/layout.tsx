@@ -1,11 +1,9 @@
 import './globals.css'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { AppSidebar } from '@/components/AppSidebar'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import ReactQuery from '@/components/ReactQuery'
 import NextAuthProvider from '@/components/NextAuthProvider'
-import { Session } from 'next-auth'
+// import { Session } from 'next-auth'
 import { ReactNode } from 'react'
 
 const poppins = Poppins({
@@ -22,7 +20,7 @@ export const metadata: Metadata = {
 
 interface NextAuthProps {
 	children: ReactNode
-	session: Session | null | undefined
+	session: never
 }
 
 export default function RootLayout({ children, session }: NextAuthProps) {
