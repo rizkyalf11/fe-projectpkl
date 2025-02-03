@@ -2,7 +2,7 @@
 import axios, { AxiosInstance } from "axios";
 
 export const AX: AxiosInstance = axios.create({
-  baseURL: "http://localhost:3040",
+  baseURL: "https://beabsenfscm.vercel.app/",
   headers: { "Content-Type": "application/json" },
 });
 
