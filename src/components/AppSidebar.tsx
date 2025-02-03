@@ -1,5 +1,5 @@
 "use client"
-import { Calendar, CalendarCheck, ChevronUp, FilePlus, Inbox, Search, Settings, User2, Users } from 'lucide-react'
+import { CalendarCheck, ChevronUp, FilePlus, User2, Users } from 'lucide-react'
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
 import { signOut } from 'next-auth/react'
