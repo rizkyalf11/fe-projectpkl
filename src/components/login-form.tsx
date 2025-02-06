@@ -21,7 +21,8 @@ import {
   FormLabel,
   FormMessage,
 } from "./ui/form";
-import { Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   username: z.string().nonempty({ message: "Harap di isi" }),
@@ -34,6 +35,7 @@ export function LoginForm({
 }: React.ComponentPropsWithoutRef<"div">) {
   const { useLogin } = useAuthModule();
   const { mutate, isPending } = useLogin();
+  const [eye, setEye] = useState<boolean>(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -80,11 +82,21 @@ export function LoginForm({
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input
-                          type="password"
-                          placeholder="*******"
-                          {...field}
-                        />
+                        <div className="flex w-full max-w-sm items-center space-x-2">
+                          <Input
+                            type={eye ? "text" : "password"}
+                            placeholder="*******"
+                            {...field}
+                          />
+                          <Button
+                            onClick={() => setEye(!eye)}
+                            type="button"
+                            variant="outline"
+                            size="icon"
+                          >
+                            {eye ? <Eye /> : <EyeOff />}
+                          </Button>
+                        </div>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
