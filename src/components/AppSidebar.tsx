@@ -23,17 +23,17 @@ import { signOut } from "next-auth/react";
 const items = [
   {
     title: "Daftar Nama",
-    url: "/dashboard/daftarnama",
+    url: "/dashboard/daftar-nama",
     icon: Users,
   },
   {
     title: "Buat Form Kehadiran",
-    url: "/dashboard/buatform",
+    url: "/dashboard/buat-form",
     icon: FilePlus,
   },
   {
     title: "Data Kehadiran",
-    url: "/dashboard/datakehadiran",
+    url: "/dashboard/data-kehadiran",
     icon: CalendarCheck,
   },
 ];
