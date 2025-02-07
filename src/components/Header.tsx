@@ -17,9 +17,9 @@ const formatBreadcrumb = (segment: string): string => {
 
 export default function Header() {
   const pathname: string | null = usePathname();
-  let segments: string[] = pathname
+  let segments: string[] = pathname ? pathname
     .split("/")
-    .filter((segment) => segment !== "");
+    .filter((segment) => segment !== "") : [];
 
   if (segments[0] === "dashboard") {
     segments = segments.slice(1);
