@@ -17,9 +17,9 @@ const formatBreadcrumb = (segment: string): string => {
 
 export default function Header() {
   const pathname: string | null = usePathname();
-  let segments: string[] = pathname ? pathname
-    .split("/")
-    .filter((segment) => segment !== "") : [];
+  let segments: string[] = pathname
+    ? pathname.split("/").filter((segment) => segment !== "")
+    : [];
 
   if (segments[0] === "dashboard") {
     segments = segments.slice(1);
@@ -37,7 +37,8 @@ export default function Header() {
         <Breadcrumb>
           <BreadcrumbList>
             {segments.map((segment: string, index: number) => {
-              const href: string = "/dashboard/" + segments.slice(0, index + 1).join("/");
+              const href: string =
+                "/dashboard/" + segments.slice(0, index + 1).join("/");
               const isLast: boolean = index === segments.length - 1;
               const formattedSegment: string = formatBreadcrumb(
                 decodeURIComponent(segment),
@@ -45,7 +46,9 @@ export default function Header() {
 
               return (
                 <div key={href} className="flex items-center">
-                  {index > 0 && <BreadcrumbSeparator />}
+                  {index > 0 && (
+                    <BreadcrumbSeparator className="mx-1 md:mx-1.5" />
+                  )}
                   <BreadcrumbItem>
                     {isLast ? (
                       <BreadcrumbPage>{formattedSegment}</BreadcrumbPage>
