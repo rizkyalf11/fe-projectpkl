@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AX } from "@/lib/axiosClient";
 import { useSession, signOut } from "next-auth/react";
 import { useToast } from "./use-toast";
