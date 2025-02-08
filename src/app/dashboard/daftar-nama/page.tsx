@@ -6,7 +6,7 @@ import { DataTable } from "./data-table";
 
 export default function DaftarNamaPage() {
   const { useGetAllUsers } = useAdminModule();
-  const { data, isPending } = useGetAllUsers();
+  const { data } = useGetAllUsers();
   console.log('data tabel', data)
 
   return (
