@@ -15,7 +15,9 @@ export default function DaftarNamaPage() {
         style={{ height: "calc(100vh - 64px)" }}
         className="w-full overflow-y-auto px-4 pb-4"
       >
-       <DataTable columns={columns} data={data ?? []} />
+        <div className="w-full">
+          <DataTable columns={columns} data={data ?? []} />
+        </div>
       </div>
     </div>
   );
