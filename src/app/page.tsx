@@ -1,17 +1,10 @@
-"use client"
-import { useSession } from 'next-auth/react'
-import { useEffect } from 'react'
+"use client";
+import { useEffect } from "react";
 
 export default function Home() {
-	const { status } = useSession();
+  useEffect(() => {
+    window.location.replace("/dashboard");
+  }, []);
 
-	useEffect(() => {
-		if(status === "authenticated") {
-			window.location.replace('/dashboard')
-		}
-	}, [status]);
-
-	return (
-		<></>
-	)
+  return <></>;
 }

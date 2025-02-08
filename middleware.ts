@@ -6,6 +6,7 @@ export default withAuth(
     console.log("token", req.nextauth.token);
   },
   {
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
       authorized: ({ token }) => {
         if (token) return true;
@@ -19,4 +20,4 @@ export default withAuth(
   }
 );
 
-export const config = { matcher: ["/", "/dashboard"] };
+export const config = { matcher: ["/", "/dashboard", "/dashboard/:path*"] };

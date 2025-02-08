@@ -1,18 +1,21 @@
-import { TypographyH1 } from "@/components/h1";
-import { TypographyH2 } from "@/components/h2";
-import { TypographyP } from "@/components/p";
+"use client"
 import React from "react";
+import useAdminModule from "../lib";
+import { columns } from "./columns";
+import { DataTable } from "./data-table";
 
 export default function DaftarNamaPage() {
+  const { useGetAllUsers } = useAdminModule();
+  const { data, isPending } = useGetAllUsers();
+  console.log('data tabel', data)
+
   return (
     <div className="flex flex-1 flex-col gap-4 pt-0">
       <div
         style={{ height: "calc(100vh - 64px)" }}
         className="w-full overflow-y-auto px-4 pb-4"
       >
-        <TypographyH1>Hello World</TypographyH1>
-        <TypographyH2>Hello World</TypographyH2>
-        <TypographyP>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quod tempora ut ex praesentium corrupti earum, repudiandae dolorem officiis itaque. ipsum dolor sit amet consectetur adipisicing elit. Adipisci, fuga?</TypographyP>
+       <DataTable columns={columns} data={data ?? []} />
       </div>
     </div>
   );

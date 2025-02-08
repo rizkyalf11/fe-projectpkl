@@ -27,8 +27,6 @@ const authOptions = {
       };
     },
     async session({ session, token }) {
-      console.log('hehehe', session)
-      console.log('hohoho', token)
       session.user.id = token.id;
       session.user.username = token.username;
       session.user.access_token = token.access_token;

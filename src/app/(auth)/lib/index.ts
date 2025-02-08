@@ -22,7 +22,7 @@ const useAuthModule = () => {
           access_token: response.data.access_token,
           redirect: false,
         });
-        router.push('/dashboard')
+        router.push('/dashboard/daftar-nama')
       },
 			onError: (error: any) => {
 				if (error.response.status == 422) {

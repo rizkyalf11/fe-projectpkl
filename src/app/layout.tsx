@@ -5,6 +5,8 @@ import ReactQuery from '@/components/ReactQuery'
 import NextAuthProvider from '@/components/NextAuthProvider'
 // import { Session } from 'next-auth'
 import { ReactNode } from 'react'
+import LoadingSession from '@/components/LoadingSession'
+import { Toaster } from '@/components/ui/toaster'
 
 const poppins = Poppins({
 	variable: '--font-poppins',
@@ -28,7 +30,12 @@ export default function RootLayout({ children, session }: NextAuthProps) {
 		<html lang="en">
 			<body className={`${poppins.className} antialiased`}>
 				<NextAuthProvider session={session}>
-					<ReactQuery>{children}</ReactQuery>
+					<ReactQuery>
+						<LoadingSession>
+							{children}
+							<Toaster />
+						</LoadingSession>
+					</ReactQuery>
 				</NextAuthProvider>
 			</body>
 		</html>
