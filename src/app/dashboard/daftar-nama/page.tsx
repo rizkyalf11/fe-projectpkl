@@ -18,7 +18,7 @@ export default function DaftarNamaPage() {
         <div className="w-full">
           <DataTable columns={columns} data={data ?? []} />
         </div>
-      </div>
+      </div>d
     </div>
   );
 }
